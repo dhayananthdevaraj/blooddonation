@@ -1,38 +1,254 @@
+/* Header Container */
+
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header-container {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Title */
+.header-title {
+  font-size: 24px;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Reload Button */
+.reload-button {
+  background-color: #fbfbfb;
+  color: #090909;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.reload-button:hover {
+  background-color: #c0392b;
+}
+
+
+/* Footer Container */
+.footer-container {
+  background-color: #353637;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Form Container */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Field Container */
+.form-field {
+  margin-bottom: 15px;
+  width: 93%;
+}
+
+/* Form Label */
+.form-field label {
+  display: block;
+  font-weight: bold;
+}
+
+/* Form Input and Select */
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field input[type="tel"],
+.form-field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+/* Form Error Message */
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #2980b9;
+}
+
+/* Success Message */
+.success-message {
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  /* Adjust styles for smaller screens here */
+  .form-container {
+    max-width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* Success Message Container */
+.success-modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Success Title */
+.success-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Success Message */
+.success-message {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* View Response Button */
+.view-response-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-response-button:hover {
+  background-color: #2980b9;
+}
+
+/* Response List */
+.response-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* Response Item */
+.response-item {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Close Button */
+.close-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.close-button:hover {
+  background-color: #2980b9;
+}
+
+/* App Container */
+.App {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Content Container */
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+/* Left Side Container */
+.left-side {
+  flex: 1;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Right Side Container */
+.right-side {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Form Container (Left Side) */
+.left-side .form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hospital Image (Right Side) */
+.blood-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }

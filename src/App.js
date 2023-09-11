@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'; // Import your CSS if you have one
+import Header from './components/Header';
+import FormComponent from './components/FormComponent';
+import SuccessMessage from './components/SuccessMessage';
+import Footer from './components/Footer';
+import bloodBG from './assessts/blood-1.jpg'; // Import your hospital image
 
 function App() {
+  const [formData, setFormData] = useState(null);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  const handleFormSubmit = (data) => {
+    setFormData(data);
+    setShowSuccessMessage(true);
+  };
+
+  const handleReload = () => {
+    setFormData(null);
+    setShowSuccessMessage(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header onReload={handleReload} />
+      <div className="content-container">
+        <div className="left-side">
+          {!formData ? (
+            <FormComponent onSubmit={handleFormSubmit} />
+          ) : (
+            showSuccessMessage ? (
+              <SuccessMessage formData={formData} onClose={() => setShowSuccessMessage(false)} />
+            ) : null
+          )}
+        </div>
+        <div className="right-side">
+          <img src={bloodBG} alt="blood" className="blood-image" />
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }
